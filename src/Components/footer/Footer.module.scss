@@ -1,0 +1,32 @@
+.footer__panel {
+	position: relative;
+	background-color: black;
+	color: white;
+	height: 30vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.footer__backup-icon {
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	right: 0;
+	left: 0;
+	top: -25px;
+	background: pink;
+	margin: 0 auto;
+	cursor: pointer;
+}
+
+.footer__copyright {
+	font-size: 0.8rem;
+	padding: 16px 0;
+
+	&--color {
+		color: purple;
+		padding: 0 5px;
+	}
+}
