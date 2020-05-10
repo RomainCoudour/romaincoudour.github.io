@@ -1,0 +1,59 @@
+.cover__panel {
+	background-color: black;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
+
+.cover__centered-information {
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	justify-items: center;
+	align-items: center;
+	text-align: center;
+
+	& .cover__title {
+		font-size: 3em;
+		font-weight: 100;
+		padding: 15px;
+	}
+
+	& .cover__occupation {
+		font-size: 1.2em;
+		letter-spacing: 0.2rem;
+		padding-bottom: 20px;
+	}
+
+	& .cover__network {
+		list-style: none;
+		display: flex;
+		text-transform: uppercase;
+		margin: 0;
+		padding: 0;
+
+		& > li {
+			letter-spacing: 0.2rem;
+			font-size: 0.6rem;
+			padding: 0.8rem 0.6em;
+		}
+
+		& li:first-child {
+			padding-left: 0;
+		}
+
+		& li:last-child {
+			padding-right: 0;
+		}
+
+		& li > a {
+			text-decoration: none;
+			color: inherit;
+		}
+
+		& a:hover {
+			color: rgba(255, 255, 255, 0.5);
+		}
+	}
+}
