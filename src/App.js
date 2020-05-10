@@ -13,8 +13,8 @@ export default () => {
 				))}
 			</div>
 			<Cover />
-			{/* <About year={currentYear - 1996} />
-			<Footer year={currentYear} /> */}
+			<About year={currentYear - 1996} />
+			<Footer year={currentYear} />
 		</>
 	);
 };
