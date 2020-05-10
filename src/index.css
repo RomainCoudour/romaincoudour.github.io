@@ -1,8 +1,13 @@
+html {
+	font-size: 20px;
+}
+
 body {
-  margin: initial;
-  font-family: 'Roboto' !important;
-  -ms-overflow-style: none;
+	margin: 0;
+	position: relative;
+	font-family: "Roboto" !important;
+	-ms-overflow-style: none;
 }
 body::-webkit-scrollbar {
-  display: none;
+	display: none;
 }
