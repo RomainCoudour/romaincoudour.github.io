@@ -8,6 +8,11 @@ body {
 	font-family: "Roboto" !important;
 	-ms-overflow-style: none;
 }
+
 body::-webkit-scrollbar {
 	display: none;
+}
+
+section {
+	position: relative;
 }

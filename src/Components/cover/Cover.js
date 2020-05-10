@@ -3,7 +3,7 @@ import styles from "./Cover.module.scss";
 
 export default () => {
 	return (
-		<div className={styles.cover__panel}>
+		<section id="cover" className={styles.cover__panel}>
 			<div className={styles["cover__centered-information"]}>
 				<span className={styles.cover__title}>Hi I'm Romain</span>
 				<span className={styles.cover__occupation}>
@@ -21,7 +21,7 @@ export default () => {
 						},
 						{
 							name: "contact",
-							url: "#about",
+							url: "mailto:rom.coudour@gmail.com?subject=Request",
 						},
 					].map((network) => (
 						<li key={network.name}>
@@ -30,6 +30,6 @@ export default () => {
 					))}
 				</ul>
 			</div>
-		</div>
+		</section>
 	);
 };
