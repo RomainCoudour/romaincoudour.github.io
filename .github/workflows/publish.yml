@@ -4,16 +4,18 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    env:
+      GH_PAGES: gh-pages
     steps:
     - name: Checkout
       uses: actions/checkout@v2
       with:
         ref: master
-    - name: Push changes to gh-pages
+    - name: Push changes to ${{ env.GH_PAGES }}
       run: |
           git fetch
-          git checkout gh-pages
-          git merge --ff -s theirs master
+          git checkout ${{ env.GH_PAGES }}
+          git merge --ff -X theirs master
     - name: Minify Action
       uses: anthonyftwang/minify-action@v1
     - uses: stefanzweifel/git-auto-commit-action@v4
