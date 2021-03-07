@@ -7,7 +7,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        node-version: [12.x]
+        node-version: [14.x]
     env:
       GH_PAGES: gh-pages
       USER_NAME: github-actions
