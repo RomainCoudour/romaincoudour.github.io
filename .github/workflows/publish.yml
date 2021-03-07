@@ -11,14 +11,14 @@ jobs:
       uses: actions/checkout@v2
       with:
         ref: master
-    - name: Push changes to ${{ env.GH_PAGES }}
+    - name: Push changes to GH_PAGES branch
       run: |
           git fetch
           git checkout ${{ env.GH_PAGES }}
-          git merge --ff -X theirs master
+          git merge --ff --allow-unrelated-histories -X theirs master
     - name: Minify Action
       uses: anthonyftwang/minify-action@v1
     - uses: stefanzweifel/git-auto-commit-action@v4
       with:
           commit_message: 'chore(action): push minified changes'
-          branch: gh-pages
+          branch: ${{ env.GH_PAGES }}
