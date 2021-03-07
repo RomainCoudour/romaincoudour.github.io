@@ -1,4 +1,6 @@
 * {
+	-webkit-transition: color 50ms cubic-bezier(0.4, 0, 0.2, 1);
+	-o-transition: color 50ms cubic-bezier(0.4, 0, 0.2, 1);
 	transition: color 50ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 a {
@@ -44,10 +46,21 @@ body {
 }
 .landing-page {
 	height: calc(100vh - 48px);
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
 	flex-direction: column;
+	-webkit-box-flex: 1;
+	-ms-flex: 1 1 auto;
 	flex: 1 1 auto;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
 	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
 	justify-content: center;
 }
 .landing-page__content {
@@ -60,24 +73,34 @@ body {
 	margin-bottom: 24px;
 }
 .nojs {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 	padding: 2px 0;
 	place-content: center;
 	background-color: rgba(255, 0, 0, 0.5);
 }
 .header {
+	position: -webkit-sticky;
 	position: sticky;
 	top: 0;
 	z-index: 10;
 	height: 48px;
+	-webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 	background-color: var(--background2);
 }
 .header__content {
 	height: inherit;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 	padding: 0 16px;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
 	align-items: center;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
 	justify-content: space-between;
 }
 .home {
@@ -87,14 +110,34 @@ body {
 	display: inline-block;
 }
 .wrapper {
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
 	width: fit-content;
+	-webkit-animation-iteration-count: 1;
 	animation-iteration-count: 1;
+	-webkit-animation: reveal 2s normal;
 	animation: reveal 2s normal;
 }
 .wrapper span {
 	margin-left: 0;
+	-webkit-animation-iteration-count: 1;
 	animation-iteration-count: 1;
+	-webkit-animation: slidein 2s normal;
 	animation: slidein 2s normal;
+}
+@-webkit-keyframes slidein {
+	0% {
+		margin-left: -355px;
+	}
+	20% {
+		margin-left: -355px;
+	}
+	30% {
+		margin-left: 0px;
+	}
+	100% {
+		margin-left: 0px;
+	}
 }
 @keyframes slidein {
 	0% {
@@ -110,6 +153,27 @@ body {
 		margin-left: 0px;
 	}
 }
+@-webkit-keyframes reveal {
+	0% {
+		opacity: 0;
+		width: 0px;
+	}
+	20% {
+		opacity: 0;
+		width: 0px;
+	}
+	35% {
+		width: -webkit-fit-content;
+		width: fit-content;
+	}
+	40% {
+		opacity: 1;
+	}
+	100% {
+		width: -webkit-fit-content;
+		width: fit-content;
+	}
+}
 @keyframes reveal {
 	0% {
 		opacity: 0;
@@ -120,16 +184,22 @@ body {
 		width: 0px;
 	}
 	35% {
+		width: -webkit-fit-content;
+		width: -moz-fit-content;
 		width: fit-content;
 	}
 	40% {
 		opacity: 1;
 	}
 	100% {
+		width: -webkit-fit-content;
+		width: -moz-fit-content;
 		width: fit-content;
 	}
 }
 .options {
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
 	display: inline-flex;
 }
 .options > * {
@@ -138,8 +208,14 @@ body {
 .themeSwitch {
 	border: 0;
 	background-color: inherit;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
 	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
 	justify-content: center;
 	cursor: pointer;
 	outline: -webkit-focus-ring-color;
@@ -159,6 +235,8 @@ body {
 }
 .main {
 	padding: 0px 100px;
+	-webkit-box-flex: 1;
+	-ms-flex: 1 1 auto;
 	flex: 1 1 auto;
 }
 .main > section {
@@ -169,6 +247,8 @@ body {
 	padding-top: calc(16px);
 }
 .footer {
+	height: -webkit-min-content;
+	height: -moz-min-content;
 	height: min-content;
 	text-align: center;
 }
@@ -179,7 +259,11 @@ body {
 	width: 32px;
 	height: 32px;
 	cursor: pointer;
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
 	display: inline-flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
 	justify-content: center;
 }
 .footer__backBtn {
@@ -194,17 +278,27 @@ body {
 	border-top-left-radius: 8px;
 	width: 0px;
 	height: 0px;
+	-webkit-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
 	transform: rotate(180deg);
 }
 .footer__content {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
 	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
 	justify-content: center;
 	font-size: 0.875rem;
 	padding: 16px;
 	letter-spacing: 0.1rem;
 }
 .socials {
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
 	display: inline-flex;
 }
 .socials > a:nth-child(2n-1) {
@@ -219,20 +313,28 @@ body {
 	color: rgba(107, 114, 128, 1);
 }
 .intro {
+	display: -ms-grid;
 	display: grid;
+	-ms-grid-columns: 1fr 16px 1fr 16px 1fr;
 	grid-template-columns: repeat(3, 1fr);
 	grid-gap: 16px;
 	grid-auto-rows: 50vh;
 }
 .avatar1 {
+	-ms-grid-column: 1;
 	grid-column: 1;
 }
 .avatar {
 	width: 100%;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
 	height: fit-content;
 }
 .about {
+	-webkit-box-flex: 1;
+	-ms-flex: 1 1 auto;
 	flex: 1 1 auto;
+	-ms-grid-column-span: 2;
 	grid-column: span 2;
 }
 .about__description {
@@ -243,24 +345,41 @@ body {
 	border-radius: 8px;
 	background-color: var(--background2);
 	border: 1px solid rgba(0, 0, 0, 0.1);
+	-webkit-box-shadow: 0 1px 2px 0 rgb(0 0 0 / 10%);
 	box-shadow: 0 1px 2px 0 rgb(0 0 0 / 10%);
 }
 .projects {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
 	flex-direction: column;
 }
 .projects__project {
+	display: -ms-grid;
 	display: grid;
+	-ms-grid-columns: 1fr 16px 1fr;
 	grid-template-columns: repeat(2, 1fr);
 	grid-gap: 16px;
 }
 .projects__project > div {
 	cursor: pointer;
+	-ms-grid-column-span: 1;
 	grid-column: span 1;
+	-webkit-transition: -webkit-transform 300ms ease-in-out;
+	transition: -webkit-transform 300ms ease-in-out;
+	-o-transition: transform 300ms ease-in-out;
 	transition: transform 300ms ease-in-out;
+	transition: transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
+	-webkit-transition: opacity 200ms ease-in-out;
+	-o-transition: opacity 200ms ease-in-out;
 	transition: opacity 200ms ease-in-out;
 }
 .projects__project > div:hover {
+	-webkit-transform: translateY(-1%);
+	-ms-transform: translateY(-1%);
 	transform: translateY(-1%);
 	background-color: white;
 	opacity: 0.9;

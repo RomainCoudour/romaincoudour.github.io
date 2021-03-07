@@ -55,6 +55,7 @@ ul ul {
    */
 
 hr {
+	-webkit-box-sizing: content-box;
 	box-sizing: content-box; /* 1 */
 	color: inherit; /* 2 */
 	height: 0; /* 1 */
@@ -96,6 +97,7 @@ a {
 
 abbr[title] {
 	text-decoration: underline;
+	-webkit-text-decoration: underline dotted;
 	text-decoration: underline dotted;
 }
 
@@ -226,6 +228,7 @@ input {
    */
 
 legend {
+	-webkit-box-sizing: border-box;
 	box-sizing: border-box; /* 1 */
 	color: inherit; /* 2 */
 	display: table; /* 1 */
@@ -268,6 +271,7 @@ textarea {
 
 [type="checkbox"],
 [type="radio"] {
+	-webkit-box-sizing: border-box;
 	box-sizing: border-box; /* 1 */
 	padding: 0; /* 2 */
 }
@@ -352,32 +356,6 @@ textarea {
 
 details {
 	display: block;
-}
-
-/*
-   * Add the correct styles in Edge 18-, IE, and Safari.
-   */
-
-dialog {
-	background-color: white;
-	border: solid;
-	color: black;
-	display: block;
-	height: -moz-fit-content;
-	height: -webkit-fit-content;
-	height: fit-content;
-	left: 0;
-	margin: auto;
-	padding: 1rem;
-	position: absolute;
-	right: 0;
-	width: -moz-fit-content;
-	width: -webkit-fit-content;
-	width: fit-content;
-}
-
-dialog:not([open]) {
-	display: none;
 }
 
 /*
