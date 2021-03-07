@@ -17,15 +17,15 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Setup GIT
-        run: |
-            git config user.name ${{ env.USER_NAME }}
-            git config user.email ${{ env.USER_EMAIL }}
       - name: Checkout
         uses: actions/checkout@v2
         with:
           ref: master
-      - name: Push changes to ${{ env.GH_PAGES }} branch
+      - name: Setup GIT
+        run: |
+            git config user.name ${{ env.USER_NAME }}
+            git config user.email ${{ env.USER_EMAIL }}
+      - name: Push changes to GH_PAGES branch
         run: |
             git fetch
             git checkout ${{ env.GH_PAGES }}
