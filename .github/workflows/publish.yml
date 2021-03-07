@@ -31,7 +31,7 @@ jobs:
         run: |
           git fetch
           git checkout ${{ env.GH_PAGES }}
-          git merge --ff --allow-unrelated-histories -X ours master
+          git reset --hard master
       - name: Minify
         run: |
           chmod +x ./.github/scripts/minify.sh
