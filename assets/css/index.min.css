@@ -2,6 +2,9 @@
 	-webkit-transition: color 50ms cubic-bezier(0.4, 0, 0.2, 1);
 	-o-transition: color 50ms cubic-bezier(0.4, 0, 0.2, 1);
 	transition: color 50ms cubic-bezier(0.4, 0, 0.2, 1);
+	-webkit-transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+	-o-transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 a {
 	color: var(--color-secondary);
@@ -10,8 +13,7 @@ a:hover {
 	color: var(--primary);
 }
 html {
-	--primary: rgba(138, 43, 226, 1);
-	--hover: rgba(255, 255, 255, 1);
+	--primary: rgba(102, 201, 255, 1);
 	--nav-height: 48px;
 	margin: 0;
 	padding: 0;
@@ -20,12 +22,14 @@ html {
 html[data-theme="light"] {
 	--bg-primary: rgba(255, 255, 255, 1);
 	--bg-secondary: rgba(245, 245, 245, 1);
+	--bg-slider: rgba(245, 245, 245, 1);
 	--color-primary: rgba(0, 0, 0, 1);
 	--color-secondary: rgba(180, 180, 180, 1);
 }
 html[data-theme="dark"] {
-	--bg-primary: rgba(31, 41, 55, 1);
+	--bg-primary: rgba(38, 46, 51, 1);
 	--bg-secondary: rgba(17, 24, 39, 1);
+	--bg-slider: var(--primary);
 	--color-primary: rgba(243, 244, 246, 1);
 	--color-secondary: rgba(180, 180, 180, 1);
 }
@@ -41,8 +45,14 @@ body {
 	color: var(--primary);
 }
 .scrollBtn {
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
 	display: inline-flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
 	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
 	align-items: center;
 	vertical-align: middle;
 	width: 48px;
@@ -54,8 +64,14 @@ body {
 	background-color: inherit;
 	color: inherit;
 	cursor: pointer;
+	-webkit-transition: color 250ms ease-in-out;
+	-o-transition: color 250ms ease-in-out;
 	transition: color 250ms ease-in-out;
+	-webkit-transition: -webkit-box-shadow 250ms ease-in-out;
+	transition: -webkit-box-shadow 250ms ease-in-out;
+	-o-transition: box-shadow 250ms ease-in-out;
 	transition: box-shadow 250ms ease-in-out;
+	transition: box-shadow 250ms ease-in-out, -webkit-box-shadow 250ms ease-in-out;
 }
 .scrollBtn:hover {
 	color: var(--primary);
@@ -78,28 +94,6 @@ body {
 	-webkit-animation: typewriter-cursor 1s infinite;
 	animation: typewriter-cursor 1s infinite;
 	border-right: 0.2rem solid var(--primary);
-}
-@-o-keyframes typewriter-cursor {
-	0% {
-		opacity: 0;
-	}
-	50% {
-		opacity: 1;
-	}
-	100% {
-		opacity: 0;
-	}
-}
-@-moz-keyframes typewriter-cursor {
-	0% {
-		opacity: 0;
-	}
-	50% {
-		opacity: 1;
-	}
-	100% {
-		opacity: 0;
-	}
 }
 @-webkit-keyframes typewriter-cursor {
 	0% {
@@ -157,6 +151,8 @@ body {
 }
 .options > * {
 	margin-left: 8px;
+	-ms-flex-item-align: center;
+	-ms-grid-row-align: center;
 	align-self: center;
 }
 .themeSwitch {
@@ -212,22 +208,35 @@ body {
 	height: -webkit-min-content;
 	height: -moz-min-content;
 	height: min-content;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-flex: 1;
+	-ms-flex: 1 1 auto;
 	flex: 1 1 auto;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
 	justify-content: space-between;
 	padding: 0 16px 16px 16px;
 }
 .footer__content {
 	font-size: 0.875rem;
 	letter-spacing: 0.1rem;
+	-ms-flex-item-align: center;
 	align-self: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
 	justify-content: center;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 }
 .footer_socials > a:nth-child(2n + 1) {
 	margin: 0 16px;
 }
 .footer__scrollBtn {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 }
 .footer__scrollBtn::before,
@@ -236,6 +245,8 @@ body {
 	width: 40%;
 	border-top: 1px solid;
 	height: 1px;
+	-ms-flex-item-align: center;
+	-ms-grid-row-align: center;
 	align-self: center;
 }
 .footer__scrollBtn + .scrollBtn {
@@ -243,13 +254,27 @@ body {
 }
 .landingPage {
 	height: calc(100vh - var(--nav-height));
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
 	flex-direction: column;
+	-webkit-box-flex: 1;
+	-ms-flex: 1 1 auto;
 	flex: 1 1 auto;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
 	justify-content: center;
 }
 .landingPage__wrapper {
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
 	display: inline-flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: row;
 	flex-direction: row;
 }
 .landingPage__content {
@@ -264,9 +289,18 @@ body {
 	margin-bottom: 24px;
 }
 .landingPage__socials {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
 	flex-direction: column;
+	-webkit-box-flex: 1;
+	-ms-flex: 1 1 auto;
 	flex: 1 1 auto;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
 	justify-content: center;
 	text-align: center;
 }
@@ -281,19 +315,24 @@ body {
 .socials__icon:hover {
 	color: var(--primary);
 }
-/**
-	WIP
-*/
 .about {
+	display: -ms-grid;
 	display: grid;
 	row-gap: 16px;
+	-webkit-column-gap: 16px;
+	-moz-column-gap: 16px;
 	column-gap: 16px;
+	-ms-grid-rows: 1fr 16px 1fr 16px auto;
+	-ms-grid-columns: 1fr 16px 1fr 16px 1fr;
 	grid-template:
 		"avatar description description" 1fr
 		"avatar description description" 1fr
 		"techs techs techs" auto / 1fr 1fr 1fr;
 }
 .about__avatar {
+	-ms-grid-row: 1;
+	-ms-grid-row-span: 3;
+	-ms-grid-column: 1;
 	grid-area: avatar;
 }
 .avatar {
@@ -303,6 +342,10 @@ body {
 	height: fit-content;
 }
 .about__description {
+	-ms-grid-row: 1;
+	-ms-grid-row-span: 3;
+	-ms-grid-column: 3;
+	-ms-grid-column-span: 3;
 	grid-area: description;
 }
 .description__title {
@@ -316,75 +359,46 @@ body {
 .description__about {
 	margin-top: 24px;
 }
+.description__about--techs {
+	color: var(--primary);
+}
 .about__techs {
+	-ms-grid-row: 5;
+	-ms-grid-column: 1;
+	-ms-grid-column-span: 5;
 	grid-area: techs;
 	padding: 16px 0;
 }
 .techs__title {
 	padding: 0 16px;
 }
-.techs {
+.techs__wrapper {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-flex: 1;
+	-ms-flex: 1 1 auto;
 	flex: 1 1 auto;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
 	height: fit-content;
 	overflow: hidden;
 	padding: 8px;
-	background-color: var(--primary);
+	background-color: var(--bg-slider);
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
 	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
 	align-items: center;
-}
-.techs__wrapper {
-	display: flex;
-	animation: autoscroll 10s infinite;
 }
 .techs__wrapper > em {
 	margin: 8px;
 	font-size: 5rem;
 }
-@-webkit-keyframes autoscroll {
-	0% {
-		transform: translateX(20%);
-	}
-	50% {
-		transform: translateX(-20%);
-	}
-	100% {
-		transform: translateX(20%);
-	}
-}
-@keyframes autoscroll {
-	0% {
-		transform: translateX(20%);
-	}
-	50% {
-		transform: translateX(-20%);
-	}
-	100% {
-		transform: translateX(20%);
-	}
-}
-@-moz-keyframes autoscroll {
-	0% {
-		transform: translateX(20%);
-	}
-	50% {
-		transform: translateX(-20%);
-	}
-	100% {
-		transform: translateX(20%);
-	}
-}
-@-o-keyframes autoscroll {
-	0% {
-		transform: translateX(20%);
-	}
-	50% {
-		transform: translateX(-20%);
-	}
-	100% {
-		transform: translateX(20%);
-	}
-}
+/**
+	WIP
+*/
 .projects {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -401,7 +415,7 @@ body {
 	grid-template-columns: repeat(2, 1fr);
 	grid-gap: 16px;
 }
-.projects__project > div {
+.project {
 	cursor: pointer;
 	-ms-grid-column-span: 1;
 	grid-column: span 1;
@@ -413,20 +427,25 @@ body {
 	-webkit-transition: opacity 200ms ease-in-out;
 	-o-transition: opacity 200ms ease-in-out;
 	transition: opacity 200ms ease-in-out;
+	height: 200px;
+	background-color: var(--primary);
 }
-.projects__project > div:hover {
+.project:hover {
 	-webkit-transform: translateY(-1%);
 	-ms-transform: translateY(-1%);
 	transform: translateY(-1%);
-	background-color: var(--hover);
-	opacity: 0.9;
 }
 /**
 	END WIP
 */
 @media (prefers-reduced-motion: reduce) {
 	* {
-		transition: color 0 cubic-bezier(0.4, 0, 0.2, 1);
+		-webkit-transition: color none;
+		-o-transition: color none;
+		transition: color none;
+		-webkit-transition: background-color none;
+		-o-transition: background-color none;
+		transition: background-color none;
 	}
 	html {
 		scroll-behavior: auto;
