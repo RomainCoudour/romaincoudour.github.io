@@ -27,7 +27,7 @@ jobs:
         run: |
           git config user.name ${{ env.USER_NAME }}
           git config user.email ${{ env.USER_EMAIL }}
-      - name: Push changes to GH_PAGES branch
+      - name: Reset GH_PAGES branch
         run: |
           git fetch
           git checkout ${{ env.GH_PAGES }}
@@ -36,9 +36,8 @@ jobs:
         run: |
           chmod +x ./.github/scripts/minify.sh
           ./.github/scripts/minify.sh
-      - uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: "chore(action): push minified changes"
-          commit_user_name: ${{ env.USER_NAME }}
-          commit_user_email: ${{ env.USER_EMAIL }}
-          branch: ${{ env.GH_PAGES }}
+      - name: Push changes to GH_PAGES branch
+        run: |
+          git add .
+          git commit -m "chore(action): push minified changes"
+          git push --force origin gh-pages
