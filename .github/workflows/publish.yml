@@ -1,0 +1,17 @@
+name: Publish
+on:
+  workflow_dispatch:
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        ref: master
+    - name: Minify Action
+      uses: anthonyftwang/minify-action@v1
+    - uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+          commit_message: 'chore(action): push changes'
+          branch: gh-pages
