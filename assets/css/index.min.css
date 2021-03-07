@@ -79,6 +79,28 @@ body {
 	animation: typewriter-cursor 1s infinite;
 	border-right: 0.2rem solid var(--primary);
 }
+@-o-keyframes typewriter-cursor {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+@-moz-keyframes typewriter-cursor {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
 @-webkit-keyframes typewriter-cursor {
 	0% {
 		opacity: 0;
@@ -301,11 +323,67 @@ body {
 .techs__title {
 	padding: 0 16px;
 }
-.techs__wrapper {
+.techs {
 	display: flex;
 	flex: 1 1 auto;
-	height: 120px;
+	height: fit-content;
+	overflow: hidden;
+	padding: 8px;
 	background-color: var(--primary);
+	justify-content: center;
+	align-items: center;
+}
+.techs__wrapper {
+	display: flex;
+	animation: autoscroll 10s infinite;
+}
+.techs__wrapper > em {
+	margin: 8px;
+	font-size: 5rem;
+}
+@-webkit-keyframes autoscroll {
+	0% {
+		transform: translateX(20%);
+	}
+	50% {
+		transform: translateX(-20%);
+	}
+	100% {
+		transform: translateX(20%);
+	}
+}
+@keyframes autoscroll {
+	0% {
+		transform: translateX(20%);
+	}
+	50% {
+		transform: translateX(-20%);
+	}
+	100% {
+		transform: translateX(20%);
+	}
+}
+@-moz-keyframes autoscroll {
+	0% {
+		transform: translateX(20%);
+	}
+	50% {
+		transform: translateX(-20%);
+	}
+	100% {
+		transform: translateX(20%);
+	}
+}
+@-o-keyframes autoscroll {
+	0% {
+		transform: translateX(20%);
+	}
+	50% {
+		transform: translateX(-20%);
+	}
+	100% {
+		transform: translateX(20%);
+	}
 }
 .projects {
 	display: -webkit-box;
