@@ -52,12 +52,9 @@
 		<script async src="assets/js/theme.min.js"></script>
 	</head>
 	<body id="top">
-		<noscript class="nojs" translate="no">
-			This site requires Javascript to be enabled
-		</noscript>
 		<header class="header">
 			<div class="header__content">
-				<a href="#" class="home">
+				<a href="#" class="homeBtn">
 					&lt;
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -76,8 +73,8 @@
 								y2="16.852"
 								gradientUnits="userSpaceOnUse"
 							>
-								<stop offset="0" stop-color="var(--color)" />
-								<stop offset="1" stop-color="var(--color)" />
+								<stop offset="0" stop-color="var(--color-primary)" />
+								<stop offset="1" stop-color="var(--color-primary)" />
 							</linearGradient>
 						</defs>
 						<path
@@ -111,17 +108,20 @@
 			</div>
 			<div id="progress-indicator" class="header__progress"></div>
 		</header>
+		<noscript class="nojs" translate="no">
+			Javascript seems to be disabled. This site uses Javascript
+		</noscript>
 		<main class="main">
-			<section class="landing-page">
-				<h1 class="landing-page__content">Hello world! I'm Romain</h1>
-				<h1 class="landing-page__content typewrite">
+			<section class="landingPage">
+				<h1 class="landingPage__content">Hello world! I'm Romain</h1>
+				<h1 class="landingPage__content typewrite">
 					<span id="typewriter-content" class="typewrite__content"></span>
 					<span class="typewrite__cursor"></span>
 				</h1>
-				<div class="socials">
+				<div class="landingPage__socials">
 					<a href="https://github.com/RomainCoudour">
 						<svg
-							class="socialsIcon"
+							class="socials__icon"
 							xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 496 512"
 							fill="currentColor"
@@ -136,7 +136,7 @@
 					</a>
 					<a href="https://www.linkedin.com/in/romain-coudour-51b723181/">
 						<svg
-							class="socialsIcon"
+							class="socials__icon"
 							xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 448 512"
 							fill="currentColor"
@@ -150,7 +150,7 @@
 						</svg>
 					</a>
 				</div>
-				<button class="btn" onclick="scrollToId('about')">
+				<button class="scrollBtn" onclick="scrollToId('about')">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						fill="currentColor"
@@ -189,17 +189,23 @@
 			<section id="projects" class="projects">
 				<h2>Projects</h2>
 				<div class="projects__project">
-					<div class="card" style="height: 200px; background-color: red"></div>
-					<div class="card" style="height: 200px; background-color: blue"></div>
 					<div
 						class="card"
-						style="height: 200px; background-color: purple"
+						style="height: 200px; background-color: var(--primary)"
+					></div>
+					<div
+						class="card"
+						style="height: 200px; background-color: var(--primary)"
+					></div>
+					<div
+						class="card"
+						style="height: 200px; background-color: var(--primary)"
 					></div>
 				</div>
 			</section>
 		</main>
 		<footer class="footer">
-			<button class="btn" onclick="scrollToId('top')">
+			<button class="scrollBtn" onclick="scrollToId('top')">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					fill="currentColor"
