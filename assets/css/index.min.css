@@ -307,10 +307,10 @@ body {
 .socialsIcon {
 	width: 3rem;
 	height: 3rem;
-	color: var(--color3);
+	color: var(--color);
 }
 .socialsIcon:hover {
-	color: rgba(107, 114, 128, 1);
+	color: blueviolet;
 }
 .intro {
 	display: -ms-grid;
