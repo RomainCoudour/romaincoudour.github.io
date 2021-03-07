@@ -26,6 +26,10 @@ jobs:
             git merge --ff --allow-unrelated-histories -X theirs master
       - name: Minify Action
         uses: TeamTigers/minisauras@v2.0.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        with:
+          directory: './'
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
             commit_message: 'chore(action): push minified changes'
