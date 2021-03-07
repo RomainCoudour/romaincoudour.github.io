@@ -6,29 +6,37 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: true
+      matrix:
+        node-version: [15.x]
     env:
       GH_PAGES: gh-pages
       USER_NAME: github-actions
       USER_EMAIL: github-actions@users.noreply.github.com
     steps:
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
       - name: Checkout
         uses: actions/checkout@v2
         with:
           ref: master
       - name: Setup GIT
         run: |
-            git config user.name ${{ env.USER_NAME }}
-            git config user.email ${{ env.USER_EMAIL }}
+          git config user.name ${{ env.USER_NAME }}
+          git config user.email ${{ env.USER_EMAIL }}
       - name: Push changes to GH_PAGES branch
         run: |
-            git fetch
-            git checkout ${{ env.GH_PAGES }}
-            git merge --ff --allow-unrelated-histories -X theirs master
-      - name: Minify Action
-        uses: anthonyftwang/minify-action@v1
+          git fetch
+          git checkout ${{ env.GH_PAGES }}
+          git merge --ff --allow-unrelated-histories -X theirs master
+      - name: Minify
+        run: |
+          chmod +x ./.github/scripts/minify.sh
+          ./.github/scripts/minify.sh
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-            commit_message: 'chore(action): push minified changes'
-            commit_user_name: ${{ env.USER_NAME }}
-            commit_user_email: ${{ env.USER_EMAIL }}
-            branch: ${{ env.GH_PAGES }}
+          commit_message: "chore(action): push minified changes"
+          commit_user_name: ${{ env.USER_NAME }}
+          commit_user_email: ${{ env.USER_EMAIL }}
+          branch: ${{ env.GH_PAGES }}
