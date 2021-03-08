@@ -38,11 +38,9 @@ body {
 	margin: 0;
 	padding: 0;
 	font-family: Roboto, sans-serif;
+	font-size: 1.25rem;
 	color: var(--color-primary);
 	background-color: var(--bg-secondary);
-}
-.currentLink {
-	color: var(--primary);
 }
 .scrollBtn {
 	display: -webkit-inline-box;
@@ -140,6 +138,7 @@ body {
 	-webkit-box-pack: justify;
 	-ms-flex-pack: justify;
 	justify-content: space-between;
+	font-size: 1.125rem;
 }
 .homeBtn {
 	font-weight: 300;
@@ -150,7 +149,7 @@ body {
 	display: inline-flex;
 }
 .options > * {
-	margin-left: 8px;
+	margin-left: 12px;
 	-ms-flex-item-align: center;
 	-ms-grid-row-align: center;
 	align-self: center;
@@ -171,8 +170,8 @@ body {
 	outline: -webkit-focus-ring-color;
 }
 .themeSwitch__icon {
-	width: 18px;
-	height: 18px;
+	width: 1.125rem;
+	height: 1.125rem;
 	color: var(--color-primary);
 }
 .themeSwitch__icon:active {
@@ -329,7 +328,7 @@ body {
 		"avatar description description" 1fr
 		"techs techs techs" auto / 1fr 1fr 1fr;
 }
-.about__avatar {
+.about__me {
 	-ms-grid-row: 1;
 	-ms-grid-row-span: 3;
 	-ms-grid-column: 1;
@@ -340,6 +339,11 @@ body {
 	height: -webkit-fit-content;
 	height: -moz-fit-content;
 	height: fit-content;
+}
+.about__socials {
+	width: 1rem;
+	height: 1rem;
+	font-size: 1rem;
 }
 .about__description {
 	-ms-grid-row: 1;
