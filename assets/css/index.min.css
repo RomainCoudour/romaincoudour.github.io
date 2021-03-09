@@ -216,7 +216,8 @@ body {
 	-webkit-box-pack: justify;
 	-ms-flex-pack: justify;
 	justify-content: space-between;
-	padding: 0 16px 16px 16px;
+	padding: 16px 0 32px 0;
+	place-content: center;
 }
 .footer__content {
 	font-size: 0.875rem;
@@ -229,9 +230,6 @@ body {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-}
-.footer_socials > a:nth-child(2n + 1) {
-	margin: 0 16px;
 }
 .footer__scrollBtn {
 	display: -webkit-box;
