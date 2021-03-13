@@ -374,9 +374,9 @@ body {
 	height: fit-content;
 }
 .about__socials {
-	width: 1rem;
-	height: 1rem;
-	font-size: 1rem;
+	width: 1.5rem;
+	height: 1.5rem;
+	font-size: 1.5rem;
 }
 .about__description {
 	-ms-grid-row: 1;
@@ -547,6 +547,7 @@ body {
 	}
 	.techs__wrapper {
 		overflow: auto;
+		justify-content: initial;
 	}
 	.techs__wrapper > em {
 		margin: 4px;
