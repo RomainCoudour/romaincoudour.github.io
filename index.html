@@ -55,6 +55,19 @@
 		<script async src="assets/js/theme.min.js"></script>
 	</head>
 	<body id="top">
+		<div id="navbar" class="overlay">
+			<a
+				href="javascript:void(0)"
+				class="overlay__closeBtn"
+				onclick="closeMenu()"
+				>&times;</a
+			>
+			<div class="overlay__content">
+				<a onclick="closeMenu()" href="#">Home</a>
+				<a onclick="closeMenu()" href="#projects">Projects</a>
+				<a onclick="closeMenu()" href="#about">About</a>
+			</div>
+		</div>
 		<header class="header">
 			<div class="header__content">
 				<a href="#" class="homeBtn"> &lt; Romain /&gt; </a>
@@ -79,6 +92,12 @@
 							></path>
 						</svg>
 					</button>
+					<a
+						href="javascript:void(0)"
+						class="options__menu"
+						onclick="openMenu()"
+						><span> &#9776;</span>
+					</a>
 				</nav>
 			</div>
 			<div id="progress-indicator" class="header__progress"></div>
