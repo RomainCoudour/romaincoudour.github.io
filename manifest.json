@@ -1,0 +1,22 @@
+{
+	"short_name": "Romain Coudour",
+	"name": "Romain Coudour | dev",
+	"icons": [
+		{
+			"src": "/assets/img/avatar-192.png",
+			"type": "image/png",
+			"sizes": "192x192"
+		},
+		{
+			"src": "/assets/img/avatar-512.png",
+			"type": "image/png",
+			"sizes": "512x512"
+		}
+	],
+	"start_url": "/",
+	"background_color": "#000000",
+	"display": "browser",
+	"scope": "/",
+	"theme_color": "#000000",
+	"description": "I'm Romain Coudour and this is my personal website"
+}
