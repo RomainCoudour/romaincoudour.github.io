@@ -531,4 +531,25 @@ body {
 		height: 2rem;
 		font-size: 2rem;
 	}
+	.about {
+		grid-template:
+			"description" auto
+			"techs" auto / 100%;
+	}
+	.about__me {
+		display: none;
+	}
+	.description__about {
+		font-size: 1rem;
+	}
+	.description__subtitle {
+		font-size: 0.75rem;
+	}
+	.techs__wrapper {
+		overflow: auto;
+	}
+	.techs__wrapper > em {
+		margin: 4px;
+		font-size: 2rem;
+	}
 }
