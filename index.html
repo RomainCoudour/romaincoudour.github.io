@@ -54,6 +54,7 @@
 	<body>
 		<div id="mobile-options" class="overlay">
 			<a
+				title="Close the menu"
 				href="javascript:void(0)"
 				class="overlay__closeBtn"
 				onclick="closeMenu()"
@@ -72,7 +73,12 @@
 					<a href="#">Home</a>
 					<a href="#projects">Projects</a>
 					<a href="#about">About</a>
-					<button class="themeSwitch" type="button" onclick="changeTheme()">
+					<button
+						class="themeSwitch"
+						type="button"
+						aria-label="Switch theme"
+						onclick="changeTheme()"
+					>
 						<svg
 							class="themeSwitch__icon"
 							xmlns="http://www.w3.org/2000/svg"
@@ -113,13 +119,19 @@
 						</h1>
 					</div>
 					<div class="landingPage__socials">
-						<a href="https://github.com/RomainCoudour">
+						<a title="GitHub" href="https://github.com/RomainCoudour">
 							<em class="fab fa-github socials__icon"></em>
 						</a>
-						<a href="https://www.linkedin.com/in/romain-coudour-51b723181/">
+						<a
+							title="LinkedIn"
+							href="https://www.linkedin.com/in/romain-coudour-51b723181/"
+						>
 							<em class="fab fa-linkedin socials__icon"></em>
 						</a>
-						<a href="mailto:romain.coudour@aitenders.com">
+						<a
+							title="Contact via mail"
+							href="mailto:romain.coudour@aitenders.com"
+						>
 							<svg
 								class="socials__icon"
 								viewBox="0 0 479.058 479.058"
@@ -136,7 +148,11 @@
 						</a>
 					</div>
 				</div>
-				<button class="scrollBtn" onclick="scrollToId('projects')">
+				<button
+					class="scrollBtn"
+					aria-label="Scroll down to projects section"
+					onclick="scrollToId('projects')"
+				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						fill="currentColor"
@@ -181,10 +197,13 @@
 							<a href="https://www.aitenders.com/"> Aitenders</a>
 						</div>
 						<span>
-							<a href="https://github.com/RomainCoudour">
+							<a title="GitHub" href="https://github.com/RomainCoudour">
 								<em class="fab fa-github about__socials"></em>
 							</a>
-							<a href="https://www.linkedin.com/in/romain-coudour-51b723181/">
+							<a
+								title="LinkedIn"
+								href="https://www.linkedin.com/in/romain-coudour-51b723181/"
+							>
 								<em class="fab fa-linkedin about__socials"></em>
 							</a>
 						</span>
@@ -225,7 +244,11 @@
 		</main>
 		<footer>
 			<div class="footer__scrollBtn">
-				<button class="scrollBtn" onclick="scrollToId('top')">
+				<button
+					class="scrollBtn"
+					aria-label="Scroll to the top"
+					onclick="scrollToId('top')"
+				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						fill="currentColor"
